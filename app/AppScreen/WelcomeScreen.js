@@ -1,10 +1,25 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, View, Image,Text } from 'react-native';
-import { Alert } from 'react-native-web';
+import { ImageBackground, StyleSheet, View, Image,Text, Alert } from 'react-native';
 import Button from '../components/Button';
 
-function WelcomeScreen(props) {
+function WelcomeScreen({ navigation }) {
+    const ButtonAlert = () =>
+    {Alert.alert(
+      "Signup",
+      "You need to signup",
+      [
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel"
+        },
+        { text: "OK", onPress: () => console.log("OK Pressed") }
+      ]
+    );}
 
+    const pressHandler= ()=>{
+        navigation.navigate('Home')
+    }
     
     return (
             <ImageBackground
@@ -24,8 +39,8 @@ function WelcomeScreen(props) {
             </View>
             
             <View style={styles.buttonContainer}>
-            <Button title="Login"  color="tomato" />
-            <Button title="Signup" color="#4ecdc4"  />
+            <Button title="Login"  color="#FFA384" onPress={pressHandler} />
+            <Button title="Signup" color="#74BDCB" onPress={ButtonAlert} />
 
             </View>
                 
