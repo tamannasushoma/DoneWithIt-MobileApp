@@ -5,42 +5,29 @@ import ListingDetails from "../app/AppScreen/ListingDetails";
 
 import { createStackNavigator } from '@react-navigation/stack';
 import Feed from "../app/AppScreen/Feed";
-import LoginScreen from './../app/AppScreen/LoginScreen';
 
 const Stack = createStackNavigator();
 
-export const StackNavigator = ()=> (
+export const HomeStack = ()=> (
   <Stack.Navigator 
   screenOptions={{
       headerStyle: {backgroundColor: "#FFC9A5"},
-      headerShown:false 
-      
+        
+    // headerShown:false 
   }}
   
   >
     <Stack.Screen
-    name="Welcome"
-    component={WelcomeScreen}
-    options={ {headerShown: false,
-        tabBarStyle: { display: "none" } }}
-    
+    name="Home"
+    component={Home}
     />
-    {/* <Stack.Screen
-    name="Login"
-    component={LoginScreen}
-    /> */}
-
-<Stack.Screen
-    name="Feed"
-    component={Feed}
-    />
-    {/* <Stack.Screen
+    <Stack.Screen
     name="Products"
     component={CardListingScreen}
     />
     <Stack.Screen
     name="ProductDetails"
     component={ListingDetails}
-    /> */}
+    />
   </Stack.Navigator>
 )

@@ -18,7 +18,7 @@ function WelcomeScreen({ navigation }) {
     );}
 
     const pressHandler= ()=>{
-        navigation.navigate('Home')
+        navigation.navigate('Feed')
     }
     
     return (

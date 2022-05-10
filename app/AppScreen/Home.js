@@ -3,6 +3,7 @@ import { SafeAreaView, View, StyleSheet , Image, FlatList,TouchableOpacity, Plat
 import AppText from '../components/AppText';
 import ListItem from '../components/ListItem';
 
+
 function Home( {navigation} ) {
     const [list, setlist] = useState([
         {title: 'See all items', key:'1', icon: require('../icons/products.png')},

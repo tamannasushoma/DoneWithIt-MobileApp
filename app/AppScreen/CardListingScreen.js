@@ -46,7 +46,7 @@ function CardListingScreen({navigation}) {
             {items.map((item)=>
             <TouchableOpacity
             key={item.key}
-            onPress={()=> navigation.navigate('ProductDetails', item)}
+            onPress={()=> navigation.navigate('ProductDetails', {item})}
             >
                  <Card
                  title={item.title}

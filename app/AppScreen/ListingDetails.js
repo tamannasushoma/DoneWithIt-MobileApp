@@ -2,15 +2,16 @@ import React from 'react';
 import { View, StyleSheet , Image} from 'react-native';
 import AppText from '../components/AppText';
 
-function ListingDetails({navigation}) {
+function ListingDetails({route, navigation}) {
+    const { item } = route.params;
     return (
         <View>
-            <Image  source={navigation.getParam('image')} style={styles.listImage}/>
+            <Image  source={item.image} style={styles.listImage}/>
             <View style={styles.detailsContainer}>
-            <AppText style={{marginBottom: 5}}> {navigation.getParam('title')}</AppText>
-            <AppText style={styles.price}> {navigation.getParam('subtitle')}</AppText>
+            <AppText style={{marginBottom: 5}}> {item.title}</AppText>
+            <AppText style={styles.price}> {item.subtitle}</AppText>
             <AppText style={styles.description}>Product Details:</AppText>
-            <AppText> {navigation.getParam('description')}</AppText>
+            <AppText> {item.description}</AppText>
 
             </View>
 
